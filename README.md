@@ -1,2 +1,0 @@
-# ZajeciaNr1
-StarUML
