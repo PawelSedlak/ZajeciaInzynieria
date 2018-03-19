@@ -1,18 +1,31 @@
 #include <iostream>
-#include <vector>
-#include "TStudent.h"
-#include "TUniversity.h"
+#include "TBernouli.h"
+using namespace std;
 
 int main()
 {
-    TStudent *student = new TStudent("Adam", 20);
-    TStudent *student2 = new TStudent("Jan", 21);
-    TUniversity* uczelnia = new TUniversity();
-    uczelnia->attach(student);
-    uczelnia->attach(student2);
-    uczelnia->printData(2);
-    uczelnia->detach();
-    uczelnia->printData(1);
+    double p;
+    int n, k;
+    cout << "Podaj p: ";
+    cin >> p;
+    cout << "\nPodaj n: ";
+    cin >> n;
+    cout << "\nPodaj k: ";
+    cin >>k;
+    if(p>1 || p<0 || n<0 || k<0 || k>n)
+    {
+        cout << "Bledne dane wejsciowe!";
+
+        return 1;
+    }
+    else
+    {
+        TBernouli *pBernouli = new TBernouli;
+        pBernouli->bernouli(p, n, k);
+            delete pBernouli;
+    }
+
     return 0;
 }
 
+//przyk³ad na dzia³anie kompozycji
